@@ -6,18 +6,18 @@ export type ConvertOptions = {
 };
 
 export type Convert = {
-  (pages?: number, options?: undefined): Promise<WriteImageResponse>;
-  (pages: number, options: { responseType?: undefined }): Promise<WriteImageResponse>;
-  (pages: number, options: { responseType: 'image' }): Promise<WriteImageResponse>;
-  (pages: number, options: { responseType: 'base64' }): Promise<ToBase64Response>;
-  (pages: number, options: { responseType: 'buffer' }): Promise<BufferResponse>;
+  (pages?: number, options?: undefined, gmPath?: string): Promise<WriteImageResponse>;
+  (pages: number, options: { responseType?: undefined }, gmPath?: string): Promise<WriteImageResponse>;
+  (pages: number, options: { responseType: 'image' }, gmPath?: string): Promise<WriteImageResponse>;
+  (pages: number, options: { responseType: 'base64' }, gmPath?: string): Promise<ToBase64Response>;
+  (pages: number, options: { responseType: 'buffer' }, gmPath?: string): Promise<BufferResponse>;
 
   bulk: {
-    (pages?: number | number[], options?: undefined): Promise<WriteImageResponse[]>;
-    (pages: number | number[], options: { responseType?: undefined }): Promise<WriteImageResponse[]>;
-    (pages: number | number[], options: { responseType: 'image' }): Promise<WriteImageResponse[]>;
-    (pages: number | number[], options: { responseType: 'base64' }): Promise<ToBase64Response[]>;
-    (pages: number | number[], options: { responseType: 'buffer' }): Promise<BufferResponse[]>;
+    (pages?: number | number[], options?: undefined, gmPath?: string): Promise<WriteImageResponse[]>;
+    (pages: number | number[], options: { responseType?: undefined }, gmPath?: string): Promise<WriteImageResponse[]>;
+    (pages: number | number[], options: { responseType: 'image' }, gmPath?: string): Promise<WriteImageResponse[]>;
+    (pages: number | number[], options: { responseType: 'base64' }, gmPath?: string): Promise<ToBase64Response[]>;
+    (pages: number | number[], options: { responseType: 'buffer' }, gmPath?: string): Promise<BufferResponse[]>;
   };
 
   setOptions: () => void;
