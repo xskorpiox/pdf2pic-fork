@@ -40,8 +40,9 @@
     "rollup": "rollup -c",
     "clean": "rimraf ./dist",
     "lint": "eslint --ext .ts .",
-    "build": "npm run test && npm run clean && npm run rollup",
-    "prepare": "husky install"
+    "build": "npm run clean && npm run rollup",
+    "prepare": "husky install",
+    "postinstall": "npm run build"
   },
   "engines": {
     "node": ">=14"
