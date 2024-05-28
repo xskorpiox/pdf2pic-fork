@@ -10,8 +10,8 @@ import { defaultOptions } from './utils/defaultOptions';
 import { getPages } from './utils/getPages';
 import { resolveResponseType } from './utils/resolveResponseType';
 
-export function pdf2picCore(source: string, data: string | Buffer, options = defaultOptions): Convert {
-  const gm = new Graphics();
+export function pdf2picCore(source: string, data: string | Buffer, options = defaultOptions, gmPath?: string): Convert {
+  const gm = new Graphics(gmPath);
 
   options = { ...defaultOptions, ...options };
 

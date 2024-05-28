@@ -25,6 +25,12 @@ export class Graphics {
 
   private gm: gm.SubClass = gm.subClass({ imageMagick: false });
 
+  constructor(gmPath?: string) {
+    if (gmPath) {
+      this.gm = gm.subClass(gmPath ? { appPath: gmPath } : { imageMagick: false });
+    }
+  }
+
   public generateValidFilename(page?: number): string {
     let filePath = path.join(this.savePath, this.saveFilename);
     if (this.savePath.startsWith('./')) {
